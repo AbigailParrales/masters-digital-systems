@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="PLL_100MHz_Intel_IP_sim/PLL_100MHz_Intel_IP.vo" type="VERILOG" />
+ <topLevel name="PLL_100MHz_Intel_IP" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

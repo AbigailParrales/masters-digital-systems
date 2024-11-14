@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY my_SUM
+set_global_assignment -name TOP_LEVEL_ENTITY ALU_Display
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:47:51  AUGUST 31, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -55,11 +55,49 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name VERILOG_FILE ../Sources/my_ALU.v
-set_global_assignment -name VERILOG_FILE ../Sources/my_SUM.v
-set_global_assignment -name VERILOG_FILE ../Sources/my_FA.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AB30 -to signed_num[0]
+set_location_assignment PIN_Y27 -to signed_num[1]
+set_location_assignment PIN_AB28 -to signed_num[2]
+set_location_assignment PIN_AC30 -to signed_num[3]
+set_location_assignment PIN_W25 -to signed_num[4]
+set_location_assignment PIN_V25 -to signed_num[5]
+set_location_assignment PIN_AC28 -to signed_num[6]
+set_location_assignment PIN_AD30 -to signed_num[7]
+set_location_assignment PIN_AA24 -to sign
+set_location_assignment PIN_W17 -to units_7segment[0]
+set_location_assignment PIN_V18 -to units_7segment[1]
+set_location_assignment PIN_AG17 -to units_7segment[2]
+set_location_assignment PIN_AG16 -to units_7segment[3]
+set_location_assignment PIN_AH17 -to units_7segment[4]
+set_location_assignment PIN_AG18 -to units_7segment[5]
+set_location_assignment PIN_AH18 -to units_7segment[6]
+set_location_assignment PIN_AF16 -to tens_7segment[0]
+set_location_assignment PIN_V16 -to tens_7segment[1]
+set_location_assignment PIN_AE16 -to tens_7segment[2]
+set_location_assignment PIN_AD17 -to tens_7segment[3]
+set_location_assignment PIN_AE18 -to tens_7segment[4]
+set_location_assignment PIN_AE17 -to tens_7segment[5]
+set_location_assignment PIN_V17 -to tens_7segment[6]
+set_location_assignment PIN_AA21 -to hundreds_7segment[0]
+set_location_assignment PIN_AB17 -to hundreds_7segment[1]
+set_location_assignment PIN_AA18 -to hundreds_7segment[2]
+set_location_assignment PIN_Y17 -to hundreds_7segment[3]
+set_location_assignment PIN_Y18 -to hundreds_7segment[4]
+set_location_assignment PIN_AF18 -to hundreds_7segment[5]
+set_location_assignment PIN_W16 -to hundreds_7segment[6]
+set_global_assignment -name VERILOG_FILE ../../CounterUpDown_Debouncer_restored/Sources/FSM_Debouncer.v
+set_global_assignment -name VERILOG_FILE ../../CounterUpDown_Debouncer_restored/Sources/Delayer.v
+set_global_assignment -name VERILOG_FILE ../../CounterUpDown_Debouncer_restored/Sources/debouncer.v
+set_global_assignment -name VERILOG_FILE ../../CounterUpDown_Debouncer_restored/Sources/CounterUpDown_Param.v
+set_global_assignment -name VERILOG_FILE ../../CounterUpDown_Debouncer_restored/Sources/CounterUpDown_Debouncer.v
+set_global_assignment -name VERILOG_FILE ../Sources/hex_to_7seg.v
+set_global_assignment -name VERILOG_FILE ../Sources/my_ALU.v
+set_global_assignment -name VERILOG_FILE ../Sources/ALU_Display.v
+set_global_assignment -name VERILOG_FILE ../Sources/sign_8bits_to_digits.v
+set_global_assignment -name VERILOG_FILE ../Sources/sig_8bit_to_3_7seg.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VERILOG_FILE ../Sources/my_SUM_generate.v
